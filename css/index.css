@@ -3,48 +3,41 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
+
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 * {
@@ -69,20 +62,38 @@ p {
 .container {
     width: 800px;
     margin: 0 auto;
+    padding: 20px 0 0 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 40px;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+header img {
+    width: 100%;
 }
 
 .top-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-bottom: 20px;
+    margin: 20px 0;
     border-bottom: 1px dashed black;
 }
 
 .top-content .text-container {
     width: 48%;
     padding: 0 1%;
-    padding-bottom: 20px;  
+    padding-bottom: 20px;
 }
 
 .middle-content {
@@ -104,7 +115,6 @@ p {
 .middle-content .boxes .box {
     width: 12.5%;
     height: 100px;
-    background: black;
     margin: 20px 2.5%;
     color: white;
     display: flex;
@@ -112,9 +122,49 @@ p {
     justify-content: center;
 }
 
+.teal {
+    background: teal;
+}
+
+.gold {
+    background: gold;
+}
+
+.cadetblue {
+    background: cadetblue;
+}
+
+.coral {
+    background: coral;
+}
+
+.crimson {
+    background: crimson;
+}
+
+.forestgreen {
+    background: forestgreen;
+}
+
+.darkorchid {
+    background: darkorchid;
+}
+
+.hotpink {
+    background: hotpink;
+}
+
+.indigo {
+    background: indigo;
+}
+
+.dodgerblue {
+    background: dodgerblue;
+}
+
 .bottom-content {
     display: flex;
-    margin: 0 2% 20px;
+    margin: 0 2% 40px;
     justify-content: space-around;
 }
 
@@ -143,4 +193,95 @@ footer nav {
 footer nav a {
     color: white;
     text-decoration: none;
+}
+
+/* About Page */
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 0;
+    padding: 0 0 25px 0;
+    border-bottom: 1px dashed black;
+}
+
+.hero .text-container {
+    width: 96%;
+}
+
+.about-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 40px 0 0 0;
+}
+
+.about-items article {
+    width: 46%;
+    margin: 0 0 40px 0;
+    padding: 0 0 20px 0;
+    border-bottom: 1px dashed black;
+}
+
+.about-items img {
+    margin: 0 0 15px 0;
+}
+
+.about-items p {
+    margin: 0 0 20px 0;
+}
+
+.about-items a {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+/* Media Queries */
+
+@media (max-width: 800px) {
+    .container {
+        max-width: 600px;
+    }
+    .about-items img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 320px;
+    }
+    nav, .top-content, .middle-content .boxes, .bottom-content, .about-items {
+        flex-direction: column;
+    }
+    nav {
+        align-items: center;
+        justify-content: space-between;
+        height: 170px;
+        margin-bottom: 20px;
+    }
+    .middle-content .boxes {
+        max-height: 700px;
+    }
+    .middle-content .boxes .box {
+        width: 45.5%;
+    }
+    header img, .top-content .text-container, footer nav, .about-items article {
+        width: 100%;
+    }
+    .bottom-content .text-container {
+        margin: 0 0 25px 0;
+        padding: 0;
+    }
+    .bottom-content {
+        margin: 0 0 10px 0;
+    }
+    .about-items img {
+        width: 320px;
+    }
 }
